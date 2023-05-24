@@ -1,0 +1,419 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+
+:root{
+    --primaryColor:#b282ff;
+    --secondaryColor:#0a0a0a;
+    --sectionColor:#131313;
+    --mainWhite:rgb(247, 247, 247);
+    --mainGrey:rgb(100,100,100);
+    --linkGrey:rgb(230,230,230);
+    --mainRed:#a5236f;
+    --textGrey:rgb(133, 133, 133);
+}
+
+header{
+    width: 100vw;
+    height: 80px;
+    background-color:var(--secondaryColor);
+    opacity: 0.95;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
+}
+
+.title{
+    color: var(--primaryColor);
+    font-size: 1.8rem;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin: 20px;
+    color: var(--linkGrey);
+    
+    position: relative;
+}
+
+.links a::after{
+    content: "";
+    height: 0px;
+    width: 0px;
+    background-color: var(--linkGrey);
+    transition: all 0.2s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.links a:hover::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: var(--linkGrey);
+}
+
+.emailButton{
+    color: var(--primaryColor);
+    font-size: 1.9rem;
+    transition:0.5s;
+}
+
+.emailButton:hover{
+    scale: 1.1;
+}
+/* --------------End of header------------- */
+.description{
+    background-color: var(--secondaryColor);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.imgDesc{
+    position: absolute;
+    left: 35%;
+}
+
+.imgBox{
+    border:1px solid var(--mainWhite);
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imgBox img{
+    height: 400px;
+    width: auto;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.imgBox img:hover{
+   scale: 1.1;
+}
+
+.txtDescription{
+   position: absolute;
+   right: 25%;
+}
+
+.smallTxt{
+    color: var(--mainGrey);
+    font-size: 1.2rem;
+}
+
+.scroll{
+    font-size: 1.1rem;
+    margin-top: 20px;
+    display: inline-block;
+}
+.txtDesc{
+    color: var(--mainWhite);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5rem;
+}
+
+.htmlIcon,.cssIcon{
+    color: var(--primaryColor);
+    font-size: 2.9rem;
+    margin-right: 7px
+}
+/* ------------End of description------------ */
+.introSection{
+    height: 45vh;
+    background-color:var(--sectionColor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.line{
+   width: 20px;
+   height: 7px;
+   border-radius: 10px;
+   background-color: var(--primaryColor);
+   box-shadow: 0px 0px 5px 0px var(--primaryColor);
+   position: relative;
+   top: 14px;
+   left: 0;
+}
+
+.IntroKnow{
+   margin-left: 26px;
+}
+
+.introTxtBox{
+    margin-left: 100px;
+}
+
+.txtIntro{
+   font-size: 1.3rem;
+   color:var(--textGrey);
+   display: inline-block;
+}
+
+.txtIntro span{
+   color: var(--primaryColor);
+}
+
+.introHead{
+   color: var(--mainWhite);
+   font-size: 2.2rem;
+   margin-top: -15px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.txtIntroducing{
+    width: 700px;
+}
+
+.imgIntroBox{
+    height: 370px;
+}
+
+.imgIntroBox img{
+    height: 100%;
+    border-radius: 2px;
+}
+
+.imgIntro{
+    margin-left: -500px;
+}
+/* ----------------End of about------------- */
+.worksSection{
+    height: 45vh;
+    background-color:var(--secondaryColor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.workTemplate{
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.workTemplate img{
+    width: 100%;
+    border-radius: 3px;
+    border-width: 0;
+    transition: all 0.5s ease;
+}
+
+.hoverDiv{
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainGrey);
+    border-radius: 3px;
+    opacity:0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s 0.2s ease;
+}
+
+.workTemplate:hover .hoverDiv{
+    opacity:0.6;
+}
+
+.workTemplate:hover .workIcon{
+    margin: 9px;
+    font-size: 2.5rem;
+    color:var(--linkGrey);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+.workTemplate:hover img{
+    scale: 1.1;
+}
+
+.workIcon{
+   display: none;
+}
+
+.workIcon:hover{
+    color: rgb(170, 170, 170) !important;
+}
+
+.workTxtBox{
+   align-self: flex-end;
+}
+
+.workTxt1{
+  color: var(--mainGrey);
+}
+
+.workTxt2{
+  color: var(--mainWhite);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+.one{
+    position: absolute;
+   bottom: 37px;
+   left: 142px;
+}
+
+.two{
+    position: absolute;
+    bottom: 37px;
+    left:778px;
+}
+
+.three{
+    position: absolute;
+    bottom: 37px;
+    right: 197px;
+}
+/* --------------End of Works------------ */
+.contactSection{
+    height: 45vh;
+    background-color:var(--sectionColor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contactTxt{
+    width: 300px;
+    position: relative;
+    left: 225px;
+}
+
+.cTxt1{
+    color: var(--mainGrey);
+    font-size: 1.3rem;
+    width: 400px;
+}
+
+.cTxt2{
+    color:var(--primaryColor);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.7rem;
+    margin:15px 0px;
+    display:inline-block;
+   
+}
+
+.cTxt3{
+    color: var(--mainWhite);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.9rem;
+    width: 600px;
+}
+
+.formSection input[type="text"]::placeholder{
+    color: var(--mainGrey);
+    opacity: 0.7;
+    font-size: 1rem;
+}
+
+.formSection textarea::placeholder{
+    color: var(--mainGrey);
+    opacity: 0.7;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formSection input{
+    height: 40px;
+    width: 450px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.formSection textarea{
+    width: 450px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.formSection input[type="submit"]{
+    width: 110px;
+    height: 47px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.formSection input[type="submit"]:hover{
+    background-color:#9363e0 ;
+}
+/* ----------------End of contact me------------- */
+footer{
+    height: 45vh;
+    background-color: var(--secondaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.titleFooter{
+    color: var(--primaryColor);
+    font-size: 3rem;
+}
+
+hr{
+    color: var(--mainGrey);
+    opacity: 0.2;
+    width: 70%;
+    align-self: flex-end;
+    margin-bottom: 60px;
+    position:absolute;
+    right: auto;
+    left: auto;
+}
+
+.copyrightTxt{
+    opacity: 0.2;
+    width: auto;
+    align-self: flex-end;
+    color: var(--mainGrey);
+    margin-bottom: 30px;
+    position:absolute;
+    right: auto;
+    left: auto;
+  
+}
